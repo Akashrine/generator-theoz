@@ -98,7 +98,7 @@ TheozGenerator.prototype.router = function router() {
   this.copy('router.php', 'router.php');
 }
 
-TheozGenerator.prototype.download = function download() {
+/*TheozGenerator.prototype.download = function download() {
   var cb = this.async(),
     url = 'http://www.magentocommerce.com/downloads/assets/' + this.magentoVersion + '/magento-' + this.magentoVersion + '.tar.gz';
 
@@ -106,7 +106,7 @@ TheozGenerator.prototype.download = function download() {
     if (err) return done(err);
     cb();
   });
-};
+};*/
 
 
 
@@ -118,6 +118,13 @@ TheozGenerator.prototype.scaffolding = function scaffolding() {
 
 this.mkdir('theme');
   wrench.chmodSyncRecursive('theme', '777');
+  var ignores = [
+    '.git',
+    'CHANGELOG.md',
+    'CONTRIBUTING.md',
+    'LICENSE.md',
+    'README.md'
+  ];
   var designPath = 'theme/app/design/frontend/' + this.designPackage,
     skinPath = 'theme/skin/frontend/' + this.designPackage;
 
@@ -180,6 +187,13 @@ this.mkdir('theme');
   this.copy('footer.phtml', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/page/html/footer.phtml');
   this.copy('header.phtml', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/page/html/header.phtml');
   this.copy('home.phtml', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/sample/home.phtml');
+
+  this.directory('scss', 'theme/skin/frontend/' + this.designPackage + '/default/scss/');
+  this.expandFiles('*.scss').forEach(function (el) {
+      if (ignores.indexOf(el) === -1) {
+        this.copy(el,el);
+      }
+    }, this);
 
 };
 
