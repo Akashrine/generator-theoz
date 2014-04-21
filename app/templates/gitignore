@@ -1,0 +1,11 @@
+.DS_Store
+node_modules/
+
+# Sass Cache
+.sass-cache
+
+# Magento configuration files
+/app/etc/local.xml
+/downloader/.cache
+/media/
+/var/*

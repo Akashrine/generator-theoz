@@ -1,0 +1,36 @@
+{
+  "name": "generator-theoz",
+  "version": "0.0.0",
+  "description": "Yeoman generator",
+  "license": "MIT",
+  "main": "app/index.js",
+  "repository": "Akashrine/generator-theoz",
+  "author": {
+    "name": "Julien Brionne",
+    "email": "",
+    "url": "https://github.com/Akashrine"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "app"
+  ],
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "yeoman-generator": "~0.16.0",
+    "chalk": "~0.4.0"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "wrench": "^1.5.8"
+  },
+  "peerDependencies": {
+    "yo": ">=1.0.0"
+  }
+}
