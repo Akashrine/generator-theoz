@@ -1,7 +1,10 @@
 # Caution
 Work in progress
+
 Big Thank you of this two repository :
+
 > [Matt Bailey](https://github.com/matt-bailey/generator-bones/)
+
 > [Josh Taylor](https://github.com/josh-taylor/generator-magento)
 
 # generator-theoz [![Build Status](https://secure.travis-ci.org/Akashrine/generator-theoz.png?branch=master)](https://travis-ci.org/Akashrine/generator-theoz)
