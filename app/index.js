@@ -98,7 +98,7 @@ TheozGenerator.prototype.router = function router() {
   this.copy('router.php', 'router.php');
 }
 
-/*TheozGenerator.prototype.download = function download() {
+TheozGenerator.prototype.download = function download() {
   var cb = this.async(),
     url = 'http://www.magentocommerce.com/downloads/assets/' + this.magentoVersion + '/magento-' + this.magentoVersion + '.tar.gz';
 
@@ -106,7 +106,7 @@ TheozGenerator.prototype.router = function router() {
     if (err) return done(err);
     cb();
   });
-};*/
+};
 
 
 
