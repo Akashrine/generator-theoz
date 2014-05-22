@@ -126,22 +126,51 @@ this.mkdir('theme');
     'README.md'
   ];
   var designPath = 'theme/app/design/frontend/' + this.designPackage,
-    skinPath = 'theme/skin/frontend/' + this.designPackage;
+      skinPath = 'theme/skin/frontend/' + this.designPackage;
 
   this.mkdir(designPath);
   this.mkdir(designPath + '/default');
   this.mkdir(designPath + '/default/layout');
+  // Layout
   this.mkdir(designPath + '/default/template');
-  this.mkdir(designPath + '/default/template/catalog');
-  this.mkdir(designPath + '/default/template/catalog/product');
-  this.mkdir(designPath + '/default/template/catalog/product/list');
-  this.mkdir(designPath + '/default/template/catalog/product/view');
-  this.mkdir(designPath + '/default/template/catalogsearch');
-  this.mkdir(designPath + '/default/template/checkout');
-  this.mkdir(designPath + '/default/template/newsletter');
   this.mkdir(designPath + '/default/template/page');
   this.mkdir(designPath + '/default/template/page/html');
-  this.mkdir(designPath + '/default/template/sample');
+  // Category
+  this.mkdir(designPath + '/default/template/catalog');
+  this.mkdir(designPath + '/default/template/catalog/category');
+  this.mkdir(designPath + '/default/template/catalog/category/navigation');
+  this.mkdir(designPath + '/default/template/catalog/solr');
+  this.mkdir(designPath + '/default/template/catalog/product');
+  this.mkdir(designPath + '/default/template/catalog/product/list');
+  this.mkdir(designPath + '/default/template/catalog/product/list/item');
+  // Product View
+  this.mkdir(designPath + '/default/template/catalog/product/view');
+  this.mkdir(designPath + '/default/template/targetrule');
+  this.mkdir(designPath + '/default/template/targetrule/catalog');
+  this.mkdir(designPath + '/default/template/targetrule/catalog/product');
+  this.mkdir(designPath + '/default/template/targetrule/catalog/product/list');
+  this.mkdir(designPath + '/default/template/productalert');
+  // Checkout
+  this.mkdir(designPath + '/default/template/checkout');
+  this.mkdir(designPath + '/default/template/checkout/cart');
+  this.mkdir(designPath + '/default/template/checkout/cart/item');
+  this.mkdir(designPath + '/default/template/checkout/threestep');
+  this.mkdir(designPath + '/default/template/checkout/threestep/payment');
+  // Customer
+  this.mkdir(designPath + '/default/template/persistent');
+  this.mkdir(designPath + '/default/template/persistent/customer');
+  this.mkdir(designPath + '/default/template/persistent/customer/form');
+  this.mkdir(designPath + '/default/template/customer');
+  this.mkdir(designPath + '/default/template/customer/account');
+  this.mkdir(designPath + '/default/template/customer/account/dashboard');
+  this.mkdir(designPath + '/default/template/customer/form');
+  this.mkdir(designPath + '/default/template/customer/address');
+  this.mkdir(designPath + '/default/template/sales');
+  this.mkdir(designPath + '/default/template/sales/order');
+  this.mkdir(designPath + '/default/template/wishlist');
+  // Search Results
+  this.mkdir(designPath + '/default/template/catalogsearch');
+
 
   this.mkdir(skinPath);
   this.mkdir(skinPath + '/default');
@@ -150,9 +179,7 @@ this.mkdir('theme');
   this.mkdir(skinPath + '/default/css');
   this.mkdir(skinPath + '/default/fonts');
 
-  this.mkdir('js/vendor');
-
-  /*Insert all xml*/
+  /*Insert all xml
     this.copy('widget.xml', 'theme/app/design/frontend/'+ this.designPackage + '/default/etc/widget.xml');
 
     this.copy('catalog.xml', 'theme/app/design/frontend/'+ this.designPackage + '/default/layout/catalog.xml');
@@ -171,22 +198,61 @@ this.mkdir('theme');
     this.copy('sendfriend.xml', 'theme/app/design/frontend/'+ this.designPackage + '/default/layout/sendfriend.xml');
     this.copy('tag.xml', 'theme/app/design/frontend/'+ this.designPackage + '/default/layout/tag.xml');
     this.copy('wishlist.xml', 'theme/app/design/frontend/'+ this.designPackage + '/default/layout/wishlist.xml');
-
+  */
 
 
   /*Generate all the app template files*/
-  this.copy('upsell.phtml', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/catalog/product/list/upsell.phtml');
-  this.copy('media.phtml', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/catalog/product/view/media.phtml');
-  this.copy('tabs.phtml', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/catalog/product/view/tabs.phtml');
-  this.copy('list.phtml', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/catalog/product/list.phtml');
-  this.copy('view.phtml', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/catalog/product/view.phtml');
-  this.copy('form.mini.phtml', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/catalogsearch/form.mini.phtml');
-  this.copy('cart.phtml', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/checkout/cart.phtml');
-  this.copy('subscribe.phtml', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/newsletter/subscribe.phtml');
-  this.copy('3columns.phtml', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/page/3columns.phtml');
-  this.copy('footer.phtml', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/page/html/footer.phtml');
-  this.copy('header.phtml', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/page/html/header.phtml');
-  this.copy('home.phtml', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/sample/home.phtml');
+  // Layout
+  this.copy('1column.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default//template/page/1column.hbs');
+  this.copy('header.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/page/html/header.hbs');
+  this.copy('footer.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/page/html/footer.hbs');
+  // Category
+  this.copy('categoryview.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/catalog/category/view.hbs');
+  this.copy('toolbar.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/catalog/product/list/toolbar.hbs');
+  this.copy('list.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/catalog/product/list.hbs');
+  this.copy('default.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/catalog/product/list/item/default.hbs');
+  this.copy('static.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/catalog/product/list/item/static.hbs');
+  this.copy('leftmenu.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/catalog/category/navigation/leftmenu.hbs');
+  this.copy('solrnavigation.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/solr/navigation.hbs');
+  // Product View
+  this.copy('productview.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/catalog/product/view.hbs');
+  this.copy('media.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/catalog/product/view/media.hbs');
+  this.copy('mediafullscreen.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/catalog/product/view/mediafullscreen.hbs');
+  this.copy('additional.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/targetrule/catalog/product/list/additional.hbs');
+  this.copy('marketing.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/targetrule/catalog/product/list/marketing.hbs');
+  this.copy('related.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/targetrule/catalog/product/list/related.hbs');
+  this.copy('upsell.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/targetrule/catalog/product/list/upsell.hbs');
+  // Add To Cart
+  this.copy('confirmation.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/checkout/cart/item/confirmation.hbs');
+  // Stock Alert
+  this.copy('stockalert.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/productalert/stockalert.hbs');
+   //Checkout
+  this.copy('cart.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/checkout/cart.hbs');
+  this.copy('threestep.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/checkout/threestep.hbs');
+  this.copy('success.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/checkout/success.hbs');
+  this.copy('failure.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/checkout/threestep/failure.hbs');
+  this.copy('expire.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/checkout/threestep/expire.hbs');
+  this.copy('methods.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/checkout/threestep/payment/mehtods.hbs');
+  //Customer
+  this.copy('login.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/persistent/customer/form/login.hbs');
+  this.copy('register.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/persistent/customer/form/register.hbs');
+  this.copy('customernavigation.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/customer/account/navigation.hbs');
+  this.copy('dashboard.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/customer/account/dashboard.hbs');
+  this.copy('address.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/customer/account/dashboard/address.hbs');
+  this.copy('customerinfo.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/customer/account/dashboard/info.hbs');
+  this.copy('customeredit.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/customer/form/edit.hbs');
+  this.copy('forgotpassword.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/customer/form/forgotpassword.hbs');
+  this.copy('newsletter.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/customer/form/newsletter.hbs');
+  this.copy('resetforgottenpassword.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/customer/form/resetforgottenpassword.hbs');
+  this.copy('book.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/customer/address/book.hbs');
+  this.copy('addressedit.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/customer/address/edit.hbs');
+  this.copy('history.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/sales/order/history.hbs');
+  this.copy('orderinfo.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/sales/order/info.hbs');
+  this.copy('recent.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/sales/order/recent.hbs');
+  this.copy('shipment.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/sales/order/shipment.hbs');
+  this.copy('wishlistview.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/wishlist/view.hbs');
+  // Search Results
+  this.copy('result.hbs', 'theme/app/design/frontend/'+ this.designPackage + '/default/template/catalogsearch/result.hbs');
 
   this.directory('scss', 'theme/skin/frontend/' + this.designPackage + '/default/scss/');
   this.expandFiles('*.scss').forEach(function (el) {
